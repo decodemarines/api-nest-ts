@@ -53,15 +53,16 @@ describe('AppController (e2e)', () => {
             });
     });
 
-    // it('/review/create (POST) - fail', async done => {
-    //     return request(app.getHttpServer())
-    //         .post('/review/create')
-    //         .send({ ...testDto, rating: 0 })
-    //         .expect(400)
-    //         .then(({ body }: request.Response) => {
-    //             done();
-    //         });
-    // });
+    // to test validation pipe for rate=0 which supposed to be 1-5
+    it('/review/create (POST) - fail', async done => {
+        return request(app.getHttpServer())
+            .post('/review/create')
+            .send({ ...testDto, rating: 0 })
+            .expect(400)
+            .then(({ body }: request.Response) => {
+                done();
+            });
+    });
 
     it('/review/byProduct/:productId (GET) - success', async done => {
         return request(app.getHttpServer())
