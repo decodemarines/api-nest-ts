@@ -19,5 +19,6 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-use-before-define': 'off',
         '@typescript-eslint/no-empty-interface': 'off',
+        '@typescript-eslint/camelcase': 'off',
     },
 };
